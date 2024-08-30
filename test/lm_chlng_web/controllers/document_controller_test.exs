@@ -8,8 +8,8 @@ defmodule LmChlngWeb.DocumentControllerTest do
 
     conn = get(conn, ~p"/api/documents/#{document.id}")
 
-    assert json_response(conn, 200)["type"] == "document"
-    assert json_response(conn, 200)["data"]["id"] == document.id
+    assert json_response(conn, 200)["data"]["type"] == "document"
+    assert json_response(conn, 200)["data"]["attributes"]["id"] == document.id
   end
 
   test "GET /api/documents/", %{conn: conn} do
@@ -18,7 +18,6 @@ defmodule LmChlngWeb.DocumentControllerTest do
     LmChlng.Documents.Services.CreateDocument.call(%{file_path: "#{@upload_dir}/C.xml"})
     conn = get(conn, ~p"/api/documents/")
 
-    assert json_response(conn, 200)["type"] == "document"
     assert length(json_response(conn, 200)["data"]) > 0
   end
 end
