@@ -3,16 +3,16 @@
 ## Starting the server
 
 1. Export environment variables
-  `source .env.dev`
+  ```source .env.dev```
 
 2. Install dependencies
-  `mix deps.get`
+  ```mix deps.get```
 
 3. Setup database
-  `mix ecto.setup`
+  ```mix ecto.setup```
 
 4. Start the server
-  `mix phx.server`
+  ```mix phx.server```
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
